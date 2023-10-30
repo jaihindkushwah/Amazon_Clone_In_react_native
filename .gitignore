@@ -3,6 +3,7 @@
 # dependencies
 node_modules/
 api/node_modules
+api/.env*
 
 # Expo
 .expo/
@@ -34,4 +35,3 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
-./api/.env
