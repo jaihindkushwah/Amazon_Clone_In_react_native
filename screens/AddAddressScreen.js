@@ -7,9 +7,9 @@ import {
   TextInput,
   Platform,
 } from "react-native";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState ,useCallback} from "react";
 import { Icon } from "@rneui/themed";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation ,useFocusEffect} from "@react-navigation/native";
 import axios from "axios";
 import { UserType } from "./UserContext";
 
@@ -32,6 +32,11 @@ const AddAddressScreen = () => {
       console.log("Error " + error);
     }
   };
+  useFocusEffect(
+    useCallback(() => {
+      fetchAddresses();
+    }, [])
+  );
   console.log(addresses);
 
   return (
